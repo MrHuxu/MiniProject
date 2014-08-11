@@ -7,6 +7,27 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @authors = Author.all
+    len = 0
+    @questions.each do |question|
+      0.upto(question.content.length - 1) do |i| 
+        len += question.content[i].ord > 127 ? 2 : 1 
+        if len >= 20
+          question.content = question.content[0..i] + '   ...'
+          break
+        end
+      end
+      question.content += len < 20 ? ' ' * (20 - len) : ''
+      len = 0
+      0.upto(question.answer.length - 1) do |i|
+        len += question.answer[i].ord > 127 ? 2 : 1
+        if len >= 20
+          question.answer = question.answer[0..i] + '   ...'
+          break
+        end
+        question.answer += len < 20 ? ' ' * (20 - len) : ''
+      end
+      len = 0
+    end
   end
 
   # GET /questions/1

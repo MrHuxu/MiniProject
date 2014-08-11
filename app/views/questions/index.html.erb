@@ -15,7 +15,7 @@
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="qst_list">
       <% @questions.each do |question| %>
         <tr>
           <td><%= question.team %></td>
@@ -45,13 +45,35 @@
     :class => 'btn btn-primary' %>
 </div>
 <div class="col-lg-3">
-  <div class="well sidebar-nav">
-    <h3>Sidebar</h3>
-    <ul class="nav nav-list">
-      <li class="nav-header">Sidebar</li>
-      <li><%= link_to "Link1", "/path1"  %></li>
-      <li><%= link_to "Link2", "/path2"  %></li>
-      <li><%= link_to "Link3", "/path3"  %></li>
-    </ul>
+  <div class="well sidebar-nav col-xs-11">
+    <div class="col-xs-offset-1">
+      <h4>Team:</h4>
+      <div class="dropdown" id="t_opt">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownTeam" data-toggle="dropdown">
+          choose
+          <span class="caret" ></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownTeam">
+          <li><a id="t_all">All</a></li>
+          <li><a id="t_ui">UI</a></li>
+          <li><a id="t_ads">Adserving</a></li>
+          <li><a id="t_fct">Forecasting</a></li>
+          <li><a id="t_rpt">Reporting</a></li>
+        </ul>
+      </div>
+
+      <h4>Position:</h4>
+      <div class="dropdown" id="p_opt">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownPosition" data-toggle="dropdown">
+          choose
+          <span class="caret" ></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPosition">
+          <li><a id="p_all">All</a></li>
+          <li><a id="p_dev">DEV</a></li>
+          <li><a id="p_qa">QA</a></li>
+        </ul>
+      </div>
+      </div>
   </div><!--/.well -->
 </div>
