@@ -5,6 +5,7 @@ group :development, :test do
   gem 'rerun'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :production do
