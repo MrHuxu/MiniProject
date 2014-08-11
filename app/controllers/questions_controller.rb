@@ -6,27 +6,37 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    @authors = Author.all
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @author = Author.find(@question.author_id)
   end
 
   # GET /questions/new
   def new
     @question = Question.new
+    @question.author_id = current_author.id
+    @question.team = current_author.team
+    @question.position = current_author.position
   end
 
   # GET /questions/1/edit
   def edit
+    if @question.author_id != current_author.id
+      redirect_to '/'
+    end
   end
 
   # POST /questions
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-
+    @question.author_id = current_author.id
+    @question.team = current_author.team
+    @question.position = current_author.position
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
@@ -41,6 +51,9 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    @question.author_id = current_author.id
+    @question.team = current_author.team
+    @question.position = current_author.position
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
@@ -63,13 +76,13 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def question_params
-      params.require(:question).permit(:team, :position, :content, :answer, :difficulty, :author_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def question_params
+    params.require(:question).permit(:team, :position, :content, :answer, :difficulty, :author_id)
+  end
 end

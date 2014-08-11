@@ -6,7 +6,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= model_class.human_attribute_name(:id) %></th>
         <th><%= model_class.human_attribute_name(:team) %></th>
         <th><%= model_class.human_attribute_name(:position) %></th>
         <th><%= model_class.human_attribute_name(:content) %></th>
@@ -19,21 +18,23 @@
     <tbody>
       <% @questions.each do |question| %>
         <tr>
-          <td><%= link_to question.id, question_path(question) %></td>
           <td><%= question.team %></td>
           <td><%= question.position %></td>
           <td><%= question.content %></td>
           <td><%= question.answer %></td>
           <td><%= question.difficulty %></td>
-          <td><%= question.author_id %></td>
+          <td><%= @authors.find(question.author_id).name %></td>
           <td>
-            <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_question_path(question), :class => 'btn btn-default btn-xs' %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              question_path(question),
-              :method => :delete,
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-xs btn-danger' %>
+            <%= link_to 'show', question, class: 'btn btn-info btn-xs' %>
+            <% if author_signed_in? && question.author_id == current_author.id %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_question_path(question), :class => 'btn btn-warning btn-xs' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                question_path(question),
+                :method => :delete,
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-xs btn-danger' %>
+            <% end %>
           </td>
         </tr>
       <% end %>
