@@ -12,7 +12,6 @@
       <th><%= model_class.human_attribute_name(:answer) %></th>
       <th><%= model_class.human_attribute_name(:difficulty) %></th>
       <th><%= model_class.human_attribute_name(:author_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,7 +25,6 @@
         <td><%= question.answer %></td>
         <td><%= question.difficulty %></td>
         <td><%= question.author_id %></td>
-        <td><%=l question.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_question_path(question), :class => 'btn btn-default btn-xs' %>
