@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :authors
+  devise_for :authors, controllers: { registrations: 'authors' }
   resources :questions
-  root to: 'questions#index'
+
+  root to: 'questions#index', as: 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
