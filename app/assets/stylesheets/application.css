@@ -16,3 +16,8 @@
 #show_page_title {
   text-align: center;
 }
+
+#logo {
+  margin-left: -10px;
+  margin-top: -5px;
+}
