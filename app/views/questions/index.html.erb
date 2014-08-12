@@ -23,9 +23,7 @@
           <td><%= question.content %></td>
           <td><%= question.answer %></td>
           <td><%= question.difficulty %></td>
-          <% if @authors.size > 0 %>
-            <td><%= @authors.find(question.author_id).name %></td>
-          <% end %>
+          <td><%= @authors.find(question.author_id).name %></td>
           <td>
             <%= link_to 'show', question, class: 'btn btn-info btn-xs' %>
             <% if author_signed_in? && question.author_id == current_author.id %>
@@ -76,6 +74,6 @@
           <li><a id="p_qa">QA</a></li>
         </ul>
       </div>
-      </div>
+    </div>
   </div><!--/.well -->
 </div>
