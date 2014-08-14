@@ -93,7 +93,7 @@ $('#p_all').click(function(){
     })
   } else {
     $('#qst_list').children('tr').each(function(){
-      if ($(this).children('td').second().text() == t_choose) {
+      if ($(this).children('td').first().text() == t_choose) {
         $(this).show()
       }
     })
