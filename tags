@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:MiniProject
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Author	app/models/author.rb	/^class Author < ActiveRecord::Base$/;"	c
+AuthorsController	app/controllers/authors_controller.rb	/^class AuthorsController < Devise::RegistrationsController$/;"	c
+CreateQuestions	db/migrate/20140811092019_create_questions.rb	/^class CreateQuestions < ActiveRecord::Migration$/;"	c
+DeviseCreateAuthors	db/migrate/20140811092126_devise_create_authors.rb	/^class DeviseCreateAuthors < ActiveRecord::Migration$/;"	c
+MiniProject	config/application.rb	/^module MiniProject$/;"	m
+Question	app/models/question.rb	/^class Question < ActiveRecord::Base$/;"	c
+QuestionsController	app/controllers/questions_controller.rb	/^class QuestionsController < ApplicationController$/;"	c
+QuestionsHelper	app/helpers/questions_helper.rb	/^module QuestionsHelper$/;"	m
+account_update_params	app/controllers/authors_controller.rb	/^  def account_update_params$/;"	f	class:AuthorsController
+change	db/migrate/20140811092019_create_questions.rb	/^  def change$/;"	f	class:CreateQuestions
+change	db/migrate/20140811092126_devise_create_authors.rb	/^  def change$/;"	f	class:DeviseCreateAuthors
+create	app/controllers/questions_controller.rb	/^  def create$/;"	f	class:QuestionsController
+destroy	app/controllers/questions_controller.rb	/^  def destroy$/;"	f	class:QuestionsController
+edit	app/controllers/questions_controller.rb	/^  def edit$/;"	f	class:QuestionsController
+index	app/controllers/questions_controller.rb	/^  def index$/;"	f	class:QuestionsController
+new	app/controllers/questions_controller.rb	/^  def new$/;"	f	class:QuestionsController
+question_params	app/controllers/questions_controller.rb	/^  def question_params$/;"	f	class:QuestionsController
+set_question	app/controllers/questions_controller.rb	/^  def set_question$/;"	f	class:QuestionsController
+show	app/controllers/questions_controller.rb	/^  def show$/;"	f	class:QuestionsController
+sign_up_params	app/controllers/authors_controller.rb	/^  def sign_up_params$/;"	f	class:AuthorsController
+update	app/controllers/questions_controller.rb	/^  def update$/;"	f	class:QuestionsController
