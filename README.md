@@ -1,4 +1,4 @@
-#Question Collection
+#Question Collector
 
 This project is written to be used to collect questions in interview, and I use all my RoR and JS knowledge to finish this task.  
 
