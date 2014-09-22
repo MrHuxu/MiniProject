@@ -1,5 +1,5 @@
 source 'https://rubygems.org/'
-ruby '2.1.2'
+ruby '2.1.3'
 
 group :development, :test do
   gem 'spring'
@@ -16,7 +16,7 @@ end
 gem 'devise'
 gem 'thin'
 gem 'rails_12factor'
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.6'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
